@@ -13,6 +13,7 @@
 		4661FF07804F5F8F2902029D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4661FA7F396383DAB12340C2 /* Main.storyboard */; };
 		B48577DE20F704D500BA5581 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48577DD20F704D500BA5581 /* AFNetworking.framework */; };
 		B48577DF20F704D500BA5581 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B48577DD20F704D500BA5581 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CB2C7040111A89C232343AE9 /* afnetworking.def in Resources */ = {isa = PBXBuildFile; fileRef = CB2C784F736D575FAEDEF391 /* afnetworking.def */; };
 		E09BCF2921A74C9E000BCEC7 /* MeteoritemapViewController.kt in Resources */ = {isa = PBXBuildFile; fileRef = E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		4661FDBF1974484A7112FF88 /* MeteoriteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeteoriteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4661FF3F6A159A3C44E20862 /* gradlew */ = {isa = PBXFileReference; lastKnownFileType = text; path = gradlew; sourceTree = "<group>"; };
 		B48577DD20F704D500BA5581 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
+		CB2C784F736D575FAEDEF391 /* afnetworking.def */ = {isa = PBXFileReference; lastKnownFileType = file.def; path = afnetworking.def; sourceTree = "<group>"; };
 		E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeteoritemapViewController.kt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				4661F634B9B9F7B02D6CE59D /* kotlin */,
+				CB2C7065E5317FF7A2CAB346 /* c_interop */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -141,6 +144,14 @@
 				4661F83F015C2A291F72573B /* Products */,
 				4661FAEAF63F5DC46293450C /* MeteoriteFinder */,
 			);
+			sourceTree = "<group>";
+		};
+		CB2C7065E5317FF7A2CAB346 /* c_interop */ = {
+			isa = PBXGroup;
+			children = (
+				CB2C784F736D575FAEDEF391 /* afnetworking.def */,
+			);
+			path = c_interop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				4661F8E73AD76A305D792058 /* LaunchScreen.storyboard in Resources */,
 				4661FF07804F5F8F2902029D /* Main.storyboard in Resources */,
 				4661FE7B1CBB794585875C71 /* settings.gradle in Resources */,
+				CB2C7040111A89C232343AE9 /* afnetworking.def in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

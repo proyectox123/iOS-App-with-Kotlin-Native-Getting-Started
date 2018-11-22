@@ -13,6 +13,18 @@ components.main {
         linkerOpts '-rpath', '@executable_path/Frameworks'
         linkerOpts "-F${productsDir}"
     }
+
+    dependencies {
+        cinterop('AFNetworking'){
+            packageName 'com.afnetworking'
+            compilerOpts "-F${productsDir}"
+            linkerOpts "-F${productsDir}"
+
+            includeDirs{
+                allHeaders "${productsDir}/AFNetworking.framework/Headers"
+            }
+        }
+    }
 }
 
 task copyExecutable() {
