@@ -1,4 +1,3 @@
-// 1 Imports for Kotlin to interop with Objective-C and some of the Cocoa Touch frameworks.
 import kotlinx.cinterop.ExportObjCClass
 import kotlinx.cinterop.ObjCObjectBase.OverrideInit
 import kotlinx.cinterop.ObjCOutlet
@@ -6,24 +5,24 @@ import platform.CoreLocation.CLLocationCoordinate2DMake
 import platform.Foundation.*
 import platform.UIKit.*
 import platform.MapKit.*
+import com.afnetworking.*
 
-// 2 The class inherits from UIVIewController and conforms to MKMapViewDelegateProtocol. The @ExportObjCClass annotation helps Kotlin create a class that is visible for lookup at runtime.
 @ExportObjCClass
 class MeteoriteMapViewController : UIViewController, MKMapViewDelegateProtocol {
 
-    // 3 Overrides the UIViewController initializer with a Kotlin constructor.
     @OverrideInit
     constructor(coder: NSCoder) : super(coder)
 
     @ObjCOutlet
     lateinit var mapView: MKMapView
+    var meteoriteList = listOf<Meteorite>()
+    val meteoriteAnnotations = mutableListOf<MKPointAnnotation>()
 
-    // 4 Overrides the viewDidLoad() method.
     override fun viewDidLoad() {
         super.viewDidLoad()
 
         val center = CLLocationCoordinate2DMake(38.8935754, -77.0847873)
-        val span = MKCoordinateSpanMake(0.7, 0.7)
+        val span = MKCoordinateSpanMake(0.9, 0.9)
         val region = MKCoordinateRegionMake(center, span)
 
         with(mapView){
@@ -31,20 +30,45 @@ class MeteoriteMapViewController : UIViewController, MKMapViewDelegateProtocol {
             setRegion(region, true)
         }
 
-        createAnnotation()
+        loadData()
+    }
+
+    private fun createAnnotation(meteorite:Meteorite) = MKPointAnnotation().apply{
+        val latitude = meteorite.reclat.toDouble()
+        val longitude = meteorite.reclong.toDouble()
+
+        setCoordinate(CLLocationCoordinate2DMake(latitude, longitude))
+        setTitle(meteorite.name)
+        setSubtitle("Fell in ${meteorite.year.substringBefore("-")}" +
+                " with a mass of ${meteorite.mass} grams")
     }
 
     override fun mapViewDidFailLoadingMap(mapView: MKMapView, withError: NSError) {
         NSLog("Error loading map: $withError")
     }
 
-    private fun createAnnotation(){
-        val annotation = MKPointAnnotation().apply {
-            setCoordinate(CLLocationCoordinate2DMake(38.8935754, -77.0847873))
-            setTitle("My mock meteorite")
-            setSubtitle("I'm falling........")
-        }
+    private fun loadData(){
+        val userLatitude = 38.8935754
+        val userLongitude = -77.0847873
 
-        mapView.addAnnotation(annotation)
+        val baseURL = "https://data.nasa.gov/"
+        val path = "resource/y77d-th95.json"
+        val params = "?\$where=within_circle(GeoLocation,$userLatitude,$userLongitude,500000)"
+        val url = NSURL.URLWithString("$baseURL$path$params")
+        val manager = AFHTTPSessionManager.manager()
+        manager.responseSerializer = AFJSONResponseSerializer.serializer()
+        manager.GET(url?.absoluteString!!, null, null, {
+            _:NSURLSessionDataTask?, responseObject:Any? ->
+            val listOfObjects = responseObject as? List<HashMap<String, Any>>
+            listOfObjects?.let {
+                meteoriteList = Meteorite.fromJsonList(it)
+                for (meteorite in meteoriteList){
+                    meteoriteAnnotations.add(createAnnotation(meteorite))
+                }
+                mapView.addAnnotations(meteoriteAnnotations)
+            }
+        }, { _:NSURLSessionDataTask?, error:NSError? ->
+            NSLog("Got a error ${error}")
+        })
     }
 }

@@ -14,6 +14,7 @@
 		B48577DE20F704D500BA5581 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48577DD20F704D500BA5581 /* AFNetworking.framework */; };
 		B48577DF20F704D500BA5581 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B48577DD20F704D500BA5581 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CB2C7040111A89C232343AE9 /* afnetworking.def in Resources */ = {isa = PBXBuildFile; fileRef = CB2C784F736D575FAEDEF391 /* afnetworking.def */; };
+		CB2C75DF407E7C5EE3CBEAAD /* Meteorite.kt in Resources */ = {isa = PBXBuildFile; fileRef = CB2C7C0ED6BA5079FA38FA02 /* Meteorite.kt */; };
 		E09BCF2921A74C9E000BCEC7 /* MeteoritemapViewController.kt in Resources */ = {isa = PBXBuildFile; fileRef = E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		4661FF3F6A159A3C44E20862 /* gradlew */ = {isa = PBXFileReference; lastKnownFileType = text; path = gradlew; sourceTree = "<group>"; };
 		B48577DD20F704D500BA5581 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
 		CB2C784F736D575FAEDEF391 /* afnetworking.def */ = {isa = PBXFileReference; lastKnownFileType = file.def; path = afnetworking.def; sourceTree = "<group>"; };
+		CB2C7C0ED6BA5079FA38FA02 /* Meteorite.kt */ = {isa = PBXFileReference; lastKnownFileType = file.kt; path = Meteorite.kt; sourceTree = "<group>"; };
 		E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeteoritemapViewController.kt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				4661F250AAC5EF52CF236AB5 /* AppDelegate.kt */,
 				4661F382E8F229875606443E /* main.kt */,
 				E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */,
+				CB2C7C0ED6BA5079FA38FA02 /* Meteorite.kt */,
 			);
 			path = kotlin;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				4661FF07804F5F8F2902029D /* Main.storyboard in Resources */,
 				4661FE7B1CBB794585875C71 /* settings.gradle in Resources */,
 				CB2C7040111A89C232343AE9 /* afnetworking.def in Resources */,
+				CB2C75DF407E7C5EE3CBEAAD /* Meteorite.kt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
