@@ -13,6 +13,7 @@
 		4661FF07804F5F8F2902029D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4661FA7F396383DAB12340C2 /* Main.storyboard */; };
 		B48577DE20F704D500BA5581 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48577DD20F704D500BA5581 /* AFNetworking.framework */; };
 		B48577DF20F704D500BA5581 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B48577DD20F704D500BA5581 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E09BCF2921A74C9E000BCEC7 /* MeteoritemapViewController.kt in Resources */ = {isa = PBXBuildFile; fileRef = E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		4661FDBF1974484A7112FF88 /* MeteoriteFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeteoriteFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4661FF3F6A159A3C44E20862 /* gradlew */ = {isa = PBXFileReference; lastKnownFileType = text; path = gradlew; sourceTree = "<group>"; };
 		B48577DD20F704D500BA5581 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
+		E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeteoritemapViewController.kt; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = "<none>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				4661F250AAC5EF52CF236AB5 /* AppDelegate.kt */,
 				4661F382E8F229875606443E /* main.kt */,
+				E09BCF2821A74C9E000BCEC7 /* MeteoritemapViewController.kt */,
 			);
 			path = kotlin;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09BCF2921A74C9E000BCEC7 /* MeteoritemapViewController.kt in Resources */,
 				4661FA9135B83B4B5C2B9A85 /* Assets.xcassets in Resources */,
 				4661F8E73AD76A305D792058 /* LaunchScreen.storyboard in Resources */,
 				4661FF07804F5F8F2902029D /* Main.storyboard in Resources */,
